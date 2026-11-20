@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+/* Mod întunecat: urmează setarea telefonului (prefers-color-scheme). */
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-surface text-ink antialiased dark:bg-brand-dark dark:text-slate-100;
+}
+
+/* Inputurile de dată/oră urmează și ele tema. */
+input,
+select,
+textarea {
+  font-size: 16px; /* sub 16px, iOS face zoom la focus */
+}
