@@ -60,7 +60,7 @@ export default function NewTrip() {
 
   return (
     <form onSubmit={submit} className="mx-auto max-w-4xl">
-      <h1 className="text-[28px] font-extrabold text-brand">Cursă nouă</h1>
+      <h1 className="text-[28px] font-extrabold text-brand dark:text-ink">Cursă nouă</h1>
       <p className="text-muted">Datele de aici completează automat eCMR-ul. Șoferul vede cursa imediat în aplicație.</p>
 
       <Card className="mt-6 grid gap-4 p-6 md:grid-cols-3">

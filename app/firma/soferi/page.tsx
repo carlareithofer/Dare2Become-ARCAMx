@@ -17,7 +17,7 @@ export default function Drivers() {
     <div className="mx-auto max-w-6xl">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
-          <h1 className="text-[28px] font-extrabold text-brand">Șoferi</h1>
+          <h1 className="text-[28px] font-extrabold text-brand dark:text-ink">Șoferi</h1>
           <p className="text-muted">Șoferii intră în aplicație cu un cod de invitație, fără parolă.</p>
         </div>
         <Button onClick={async () => setCode(await createInviteCode())}><KeyRound size={17} aria-hidden /> Invită un șofer</Button>
@@ -27,7 +27,7 @@ export default function Drivers() {
         <Card className="mt-5 flex flex-wrap items-center gap-4 border-2 border-accent p-5">
           <div>
             <p className="text-[14px] text-muted">Trimite-i șoferului acest cod (valabil 7 zile):</p>
-            <p className="text-[32px] font-extrabold tracking-[0.25em] text-brand">{code}</p>
+            <p className="text-[32px] font-extrabold tracking-[0.25em] text-brand dark:text-accent">{code}</p>
           </div>
           <Button variant="secondary" onClick={() => navigator.clipboard?.writeText(code)}><Copy size={16} aria-hidden /> Copiază</Button>
         </Card>

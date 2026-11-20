@@ -42,7 +42,7 @@ export default function TripPage() {
             return (
               <div key={s.key} className="flex flex-1 items-center">
                 <div className="flex flex-col items-center gap-1">
-                  <span className={cx('grid h-9 w-9 place-items-center rounded-full', done ? 'bg-ok text-white' : 'border-2 border-line text-muted')}>
+                  <span className={cx('grid h-9 w-9 place-items-center rounded-full', done ? 'bg-ok text-white dark:text-brand' : 'border-2 border-line text-muted')}>
                     {done ? <CheckCircle2 size={20} /> : i + 1}
                   </span>
                   <span className={cx('text-[13px] font-semibold', done ? 'text-ok' : 'text-muted')}>{s.label}</span>

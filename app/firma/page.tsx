@@ -20,7 +20,7 @@ export default function FirmTrips() {
   const count = (s: TripStatus[]) => trips.filter((t) => s.includes(t.status)).length;
   const withRemarks = trips.filter((t) => t.remarks.length > 0 && t.status === 'delivered').length;
   const kpis = [
-    { label: 'Curse active', value: count(['planned', 'in_progress', 'loaded']), Icon: Truck, cls: 'text-brand bg-brand-soft' },
+    { label: 'Curse active', value: count(['planned', 'in_progress', 'loaded']), Icon: Truck, cls: 'text-brand bg-brand-soft dark:text-ink' },
     { label: 'De aprobat pentru facturare', value: count(['delivered']), Icon: FileClock, cls: 'text-progress bg-progress-soft' },
     { label: 'Livrări cu observații', value: withRemarks, Icon: AlertTriangle, cls: 'text-problem bg-problem-soft' },
     { label: 'Facturate', value: count(['invoiced']), Icon: CheckCircle2, cls: 'text-ok bg-ok-soft' },
@@ -29,7 +29,7 @@ export default function FirmTrips() {
 
   return (
     <div className="mx-auto max-w-6xl">
-      <h1 className="text-[28px] font-extrabold text-brand">Curse</h1>
+      <h1 className="text-[28px] font-extrabold text-brand dark:text-ink">Curse</h1>
       <p className="text-muted">Toate cursele firmei și eCMR-urile lor, actualizate în timp real.</p>
 
       <div className="mt-6 grid grid-cols-2 gap-4 lg:grid-cols-4">
@@ -69,7 +69,7 @@ export default function FirmTrips() {
           <tbody>
             {list.map((t) => (
               <tr key={t.id} onClick={() => router.push(`/firma/curse/${t.id}`)} className="cursor-pointer border-t border-line hover:bg-surface">
-                <td className="px-4 py-3 font-semibold text-brand">
+                <td className="px-4 py-3 font-semibold text-brand dark:text-ink">
                   <Link href={`/firma/curse/${t.id}`}>{t.ecmr?.number}</Link>
                   {t.remarks.length > 0 && <AlertTriangle size={14} className="ml-1.5 inline text-problem" aria-label="are observații" />}
                 </td>

@@ -28,7 +28,7 @@ export default function FirmTripDetail() {
       <Link href="/firma" className="inline-flex items-center gap-1.5 text-[14px] font-semibold text-muted hover:text-ink"><ArrowLeft size={16} aria-hidden /> Toate cursele</Link>
       <div className="mt-3 flex flex-wrap items-center justify-between gap-3">
         <div>
-          <h1 className="text-[28px] font-extrabold text-brand">{city(trip.loadingAddress)} → {city(trip.deliveryAddress)}</h1>
+          <h1 className="text-[28px] font-extrabold text-brand dark:text-ink">{city(trip.loadingAddress)} → {city(trip.deliveryAddress)}</h1>
           <p className="text-muted">{trip.ecmr?.number} · {trip.driver?.fullName} · {trip.vehicle?.plateNumber}</p>
         </div>
         <div className="flex items-center gap-3">
@@ -48,7 +48,7 @@ export default function FirmTripDetail() {
                 <dt className="text-muted">CUI</dt><dd>{trip.client?.vatCode}</dd>
                 <dt className="text-muted">Serviciu</dt><dd>Transport {city(trip.loadingAddress)} – {city(trip.deliveryAddress)}</dd>
                 <dt className="text-muted">eCMR</dt><dd>{trip.ecmr?.number}</dd>
-                <dt className="text-muted">Valoare</dt><dd className="text-[18px] font-extrabold text-brand">{fmtMoney(trip.price, trip.currency)}</dd>
+                <dt className="text-muted">Valoare</dt><dd className="text-[18px] font-extrabold text-brand dark:text-ink">{fmtMoney(trip.price, trip.currency)}</dd>
               </dl>
               {trip.remarks.length > 0 && (
                 <p className="mt-3 flex gap-2 rounded-xl bg-problem-soft p-3 text-[13px] text-problem">

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { ThemeToggle } from './ThemeToggle';
 
 /** Bara de sus din aplicația șoferului. */
 export function DriverHeader({ title, back, right }: { title: ReactNode; back?: string; right?: ReactNode }) {
@@ -13,6 +14,7 @@ export function DriverHeader({ title, back, right }: { title: ReactNode; back?: 
         </Link>
       ) : <span className="w-2" />}
       <h1 className="flex-1 truncate text-[18px] font-bold">{title}</h1>
+      <ThemeToggle className="h-11 w-11 shrink-0 justify-center rounded-full hover:bg-white/10" />
       {right}
     </header>
   );

@@ -52,7 +52,7 @@ export default function DeliveryPage() {
   if (step === 'done') {
     return (
       <main className="flex min-h-screen flex-col items-center justify-center gap-4 p-6 text-center">
-        <span className="grid h-24 w-24 place-items-center rounded-full bg-ok text-white"><CheckCircle2 size={56} aria-hidden /></span>
+        <span className="grid h-24 w-24 place-items-center rounded-full bg-ok text-white dark:text-brand"><CheckCircle2 size={56} aria-hidden /></span>
         <h1 className="text-[26px] font-extrabold">Livrare înregistrată</h1>
         <p className="text-[16px] text-muted">eCMR-ul {trip.ecmr?.number} a fost semnat și trimis la firmă. Factura se poate emite chiar azi.</p>
         <div className="mt-4 flex w-full flex-col gap-3">
@@ -82,7 +82,7 @@ export default function DeliveryPage() {
             onClick={() => { setGoodsOk(true); setSelected([]); setStep('sign'); }}
             className="flex min-h-24 items-center gap-4 rounded-2xl border-2 border-ok bg-ok-soft p-4 text-left"
           >
-            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ok text-white"><ThumbsUp aria-hidden /></span>
+            <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-ok text-white dark:text-brand"><ThumbsUp aria-hidden /></span>
             <span><span className="block text-[19px] font-bold text-ok">Da, totul e în regulă</span><span className="text-[14px] text-ink">Fără observații</span></span>
           </button>
           <button

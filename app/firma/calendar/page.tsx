@@ -11,7 +11,7 @@ import type { TripStatus } from '@/lib/types';
 const dot: Record<TripStatus, string> = {
   planned: 'bg-planned-soft text-planned border-planned/30',
   in_progress: 'bg-progress-soft text-progress border-progress/30',
-  loaded: 'bg-brand-soft text-brand border-brand/20',
+  loaded: 'bg-brand-soft text-brand border-brand/20 dark:text-ink dark:border-ink/20',
   delivered: 'bg-ok-soft text-ok border-ok/30',
   invoiced: 'bg-ok-soft text-ok border-ok/30',
   cancelled: 'bg-problem-soft text-problem border-problem/30',
@@ -35,7 +35,7 @@ export default function Calendar() {
   return (
     <div className="mx-auto max-w-6xl">
       <div className="flex items-center justify-between">
-        <h1 className="text-[28px] font-extrabold capitalize text-brand">{month.toLocaleDateString('ro-RO', { month: 'long', year: 'numeric' })}</h1>
+        <h1 className="text-[28px] font-extrabold capitalize text-brand dark:text-ink">{month.toLocaleDateString('ro-RO', { month: 'long', year: 'numeric' })}</h1>
         <div className="flex gap-2">
           <button onClick={() => move(-1)} className="grid h-10 w-10 place-items-center rounded-xl border border-line bg-card" aria-label="Luna anterioară"><ChevronLeft /></button>
           <button onClick={() => setMonth(() => { const d = new Date(); d.setDate(1); return d; })} className="h-10 rounded-xl border border-line bg-card px-4 text-[14px] font-semibold">Azi</button>

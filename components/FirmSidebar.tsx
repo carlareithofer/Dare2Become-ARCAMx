@@ -4,6 +4,7 @@ import { usePathname } from 'next/navigation';
 import { CalendarDays, LayoutList, Plus, RotateCcw, Users } from 'lucide-react';
 import { Logo, cx } from './ui';
 import { resetDemoData } from '@/lib/data';
+import { ThemeToggle } from './ThemeToggle';
 
 const items = [
   { href: '/firma', label: 'Curse', Icon: LayoutList },
@@ -34,9 +35,12 @@ export function FirmSidebar() {
       <div className="mt-auto rounded-xl bg-white/5 p-3 text-[13px] text-white/70">
         <p className="font-semibold text-white">Trans Exemplu SRL</p>
         <p>Elena Ionescu · Admin</p>
-        <button onClick={() => confirm('Refaci datele demo? Modificările făcute se pierd.') && resetDemoData()} className="mt-2 inline-flex items-center gap-1.5 text-white/60 hover:text-white">
-          <RotateCcw size={13} aria-hidden /> Resetează datele demo
-        </button>
+        <div className="mt-2 flex items-center justify-between gap-1">
+          <button onClick={() => confirm('Refaci datele demo? Modificările făcute se pierd.') && resetDemoData()} className="inline-flex items-center gap-1.5 whitespace-nowrap text-white/60 hover:text-white">
+            <RotateCcw size={13} aria-hidden /> Resetează datele demo
+          </button>
+          <ThemeToggle size={16} className="-mr-1 h-8 w-8 shrink-0 justify-center rounded-lg text-white/70 hover:bg-white/10 hover:text-white" />
+        </div>
       </div>
     </aside>
   );

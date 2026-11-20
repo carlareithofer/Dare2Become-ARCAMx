@@ -30,23 +30,30 @@ body {
   color: var(--color-ink);
 }
 
-/* Mod întunecat pentru aplicația șoferului (condus noaptea) */
-@media (prefers-color-scheme: dark) {
-  .driver-app {
-    --color-surface: #0b1220;
-    --color-card: #13233a;
-    --color-ink: #e8eef6;
-    --color-muted: #9fb0c4;
-    --color-line: #23364f;
-    --color-brand-soft: #1b3150;
-    --color-ok-soft: #12351f;
-    --color-progress: #fcd34d;
-    --color-progress-soft: #3a2a0a;
-    --color-problem-soft: #3b1414;
-    --color-planned-soft: #1b2a3e;
-    background: var(--color-surface);
-    color: var(--color-ink);
-  }
+/* Tema întunecată: clasa `dark` pe <html> (pusă de scriptul din app/layout.tsx).
+   Se aplică ambelor interfețe; clasele `dark:` din componente o folosesc. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  color-scheme: light;
+}
+
+.dark {
+  color-scheme: dark;
+  --color-surface: #0b1220;
+  --color-card: #13233a;
+  --color-ink: #e8eef6;
+  --color-muted: #9fb0c4;
+  --color-line: #23364f;
+  --color-brand-soft: #1b3150;
+  --color-ok: #4ade80;
+  --color-ok-soft: #12351f;
+  --color-progress: #fcd34d;
+  --color-progress-soft: #3a2a0a;
+  --color-problem: #f87171;
+  --color-problem-soft: #3b1414;
+  --color-planned: #9fb0c4;
+  --color-planned-soft: #1b2a3e;
 }
 
 /* butoane mari, ușor de apăsat cu degetul */

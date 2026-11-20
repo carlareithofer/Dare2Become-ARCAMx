@@ -13,7 +13,7 @@ const variants: Record<Variant, string> = {
   primary: 'bg-accent text-brand hover:bg-accent-pressed active:bg-accent-pressed font-bold',
   secondary: 'bg-card text-ink border-2 border-line hover:border-muted font-semibold',
   ghost: 'bg-transparent text-ink hover:bg-brand-soft font-semibold',
-  danger: 'bg-problem text-white hover:opacity-90 font-semibold',
+  danger: 'bg-problem text-white dark:text-brand hover:opacity-90 font-semibold',
 };
 const sizes = { md: 'h-11 px-4 text-[15px] rounded-xl', lg: 'h-14 px-5 text-[17px] rounded-2xl w-full' };
 
@@ -66,7 +66,7 @@ export function Label({ children, hint }: { children: ReactNode; hint?: string }
   );
 }
 
-const field = 'w-full rounded-xl border-2 border-line bg-card px-3.5 text-[16px] text-ink outline-none focus:border-brand';
+const field = 'w-full rounded-xl border-2 border-line bg-card px-3.5 text-[16px] text-ink outline-none focus:border-brand dark:focus:border-accent';
 
 export function Input(p: ComponentProps<'input'>) {
   return <input {...p} className={cx(field, 'h-12', p.className)} />;
@@ -80,7 +80,7 @@ export function Textarea(p: ComponentProps<'textarea'>) {
 
 export function Logo({ light = false, className }: { light?: boolean; className?: string }) {
   return (
-    <span className={cx('inline-flex items-center gap-2 font-extrabold tracking-tight', light ? 'text-white' : 'text-brand', className)}>
+    <span className={cx('inline-flex items-center gap-2 font-extrabold tracking-tight', light ? 'text-white' : 'text-brand dark:text-ink', className)}>
       <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent text-brand">
         <Truck size={18} strokeWidth={2.5} aria-hidden />
       </span>
