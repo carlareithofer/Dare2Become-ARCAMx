@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* Paleta FacturCMR – varianta A „Autostradă” */
+@theme {
+  --color-brand: #0f2a4a;
+  --color-brand-dark: #0b1220;
+  --color-brand-soft: #e3eaf3;
+  --color-accent: #ff7a1a;
+  --color-accent-pressed: #e8590c;
+  --color-surface: #f4f6f9;
+  --color-card: #ffffff;
+  --color-ink: #1c2530;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-ok: #15803d;
+  --color-ok-soft: #dcfce7;
+  --color-progress: #92400e;
+  --color-progress-soft: #fef3c7;
+  --color-problem: #dc2626;
+  --color-problem-soft: #fee2e2;
+  --color-planned: #64748b;
+  --color-planned-soft: #eef2f6;
+
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+html,
+body {
+  background: var(--color-surface);
+  color: var(--color-ink);
+}
+
+/* Mod întunecat pentru aplicația șoferului (condus noaptea) */
+@media (prefers-color-scheme: dark) {
+  .driver-app {
+    --color-surface: #0b1220;
+    --color-card: #13233a;
+    --color-ink: #e8eef6;
+    --color-muted: #9fb0c4;
+    --color-line: #23364f;
+    --color-brand-soft: #1b3150;
+    --color-ok-soft: #12351f;
+    --color-progress: #fcd34d;
+    --color-progress-soft: #3a2a0a;
+    --color-problem-soft: #3b1414;
+    --color-planned-soft: #1b2a3e;
+    background: var(--color-surface);
+    color: var(--color-ink);
+  }
+}
+
+/* butoane mari, ușor de apăsat cu degetul */
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* „PDF” = tipărire din browser: ascundem meniul și butoanele */
+@media print {
+  aside,
+  button {
+    display: none !important;
+  }
+  main {
+    padding: 0 !important;
+  }
+}

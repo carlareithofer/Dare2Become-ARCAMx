@@ -1,0 +1,10 @@
+{
+  "name": "FacturCMR – Șofer",
+  "short_name": "FacturCMR",
+  "start_url": "/sofer",
+  "display": "standalone",
+  "background_color": "#F4F6F9",
+  "theme_color": "#0F2A4A",
+  "lang": "ro",
+  "icons": []
+}
