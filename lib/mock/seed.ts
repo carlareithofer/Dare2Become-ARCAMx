@@ -10,7 +10,6 @@ import type {
   Photo,
   Profile,
   Remark,
-  Signature,
   Trip,
   TripStatus,
   Vehicle,
