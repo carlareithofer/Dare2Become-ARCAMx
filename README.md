@@ -4,6 +4,8 @@
 
 Prototip realizat de echipa **ARCAMx** în programul **Dare2Become**.
 
+🔗 **Aplicația online:** https://facturcmr.vercel.app
+
 ---
 
 ## Cuprins
@@ -12,7 +14,7 @@ Prototip realizat de echipa **ARCAMx** în programul **Dare2Become**.
 2. [Cum funcționează](#cum-funcționează)
 3. [Funcționalități](#funcționalități)
 4. [Tehnologii](#tehnologii)
-5. [Pornire rapidă](#pornire-rapidă)
+5. [Aplicația online](#aplicația-online)
 6. [Date demo](#date-demo)
 7. [Structura proiectului](#structura-proiectului)
 8. [Date și backend](#date-și-backend)
@@ -99,40 +101,19 @@ Gândită pentru telefon: butoane mari, text lizibil, un singur buton principal 
 
 > ⚠️ Next.js 16 are schimbări importante față de versiunile vechi. Vezi `AGENTS.md` înainte de a modifica codul.
 
-## Pornire rapidă
+## Aplicația online
 
-Ai nevoie de **Node.js 20 sau mai nou** ([nodejs.org](https://nodejs.org), varianta LTS).
+Aplicația rulează pe Vercel. Nu trebuie instalat nimic: deschizi link-ul în browser, pe laptop sau pe telefon.
 
-```bash
-npm install      # o singură dată
-npm run dev      # pornește aplicația
-```
-
-Deschide [http://localhost:3000](http://localhost:3000) și alege rolul:
-
-| Interfață | Adresă |
+| Interfață | Link |
 | --- | --- |
-| Alegere rol | http://localhost:3000 |
-| Aplicația șoferului | http://localhost:3000/sofer |
-| Dashboard-ul firmei | http://localhost:3000/firma |
+| Alegere rol | https://facturcmr.vercel.app |
+| Aplicația șoferului | https://facturcmr.vercel.app/sofer |
+| Dashboard-ul firmei | https://facturcmr.vercel.app/firma |
 
-### Pe telefon
+Pe telefon, aplicația șoferului se poate adăuga pe ecranul principal (din meniul browserului: „Adaugă pe ecranul de pornire”).
 
-Telefonul și laptopul trebuie să fie pe **același Wi-Fi**. Pornește cu:
-
-```bash
-npm run dev -- -H 0.0.0.0
-```
-
-În terminal apare o adresă „Network”, de forma `http://192.168.x.x:3000`. Deschide-o pe telefon și adaugă `/sofer`.
-
-### Alte comenzi
-
-```bash
-npm run lint     # verifică codul
-npm run build    # construiește versiunea de producție
-npm run start    # pornește versiunea construită
-```
+Orice modificare unită în `main` ajunge automat pe site. Fiecare pull request primește și un link de previzualizare de la Vercel, în comentariile PR-ului.
 
 ## Date demo
 
