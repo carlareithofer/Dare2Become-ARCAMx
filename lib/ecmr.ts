@@ -28,6 +28,36 @@ export interface EcmrSnapshotInput {
   goods: Omit<EcmrGoods, "id" | "ecmrId">[];
 }
 
+interface SnapshotParty {
+  name: string;
+  vatCode: string;
+  address: string;
+  city?: string;
+  country: string;
+  regNumber?: string;
+}
+
+/** Forma lui Ecmr.snapshot (în DB e JSON liber; aici îl tipizăm pentru afișare). */
+export interface EcmrSnapshot {
+  sender: SnapshotParty;
+  consignee: SnapshotParty;
+  client: SnapshotParty;
+  carrier: SnapshotParty;
+  driverName: string;
+  plateNumber: string;
+  trailerPlate: string | null;
+  loadingAddress: string;
+  loadingDate: string;
+  deliveryAddress: string;
+  plannedDeliveryDate: string;
+  goods: Omit<EcmrGoods, "id" | "ecmrId">[];
+}
+
+/** Citește snapshot-ul eCMR (presupunem că a fost creat cu buildEcmrSnapshot). */
+export function readEcmrSnapshot(snapshot: Record<string, unknown>): EcmrSnapshot {
+  return snapshot as unknown as EcmrSnapshot;
+}
+
 /**
  * Copia datelor la momentul emiterii eCMR-ului.
  * Așa documentul rămâne la fel chiar dacă se editează ulterior partenerii sau camionul.
@@ -40,7 +70,7 @@ export function buildEcmrSnapshot(i: EcmrSnapshotInput): Record<string, unknown>
     city: p.city,
     country: p.country,
   });
-  return {
+  const snapshot: EcmrSnapshot = {
     sender: party(i.sender),
     consignee: party(i.consignee),
     client: party(i.client),
@@ -60,4 +90,5 @@ export function buildEcmrSnapshot(i: EcmrSnapshotInput): Record<string, unknown>
     plannedDeliveryDate: i.trip.plannedDeliveryDate,
     goods: i.goods,
   };
+  return snapshot as unknown as Record<string, unknown>;
 }

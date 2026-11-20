@@ -33,7 +33,7 @@ Deadline prototip: **duminică, 22 noiembrie 2026, 23:59**.
 - Etichete, culori și iconițe pentru statusuri: `lib/status.ts`.
 
 ## Stack
-Next.js 16 (App Router, `cacheComponents` activ) + TypeScript + Tailwind CSS v4 (paleta în `tailwind.config.ts`, încărcată cu `@config`) + font Inter.
+Next.js 16 (App Router, `cacheComponents` activ) + TypeScript + Tailwind CSS v4 (paleta în `tailwind.config.mts`, încărcată cu `@config`) + font Inter.
 
 ## Structură
 ```
